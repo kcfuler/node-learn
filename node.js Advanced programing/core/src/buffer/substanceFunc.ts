@@ -9,6 +9,30 @@ let buf = Buffer.alloc(6);
 // console.log(buf.toString());
 
 //2 write 方法
-buf.write("123", 1, 2); //后面的两个参数同样是指定传入数据的起止位置
-console.log(buf);
-console.log(buf.toString());
+// buf.write("123", 1, 2); //第二个和第三个参数表示当前写入Buffer的长度
+// console.log(buf);
+// console.log(buf.toString());
+
+// 3 toString
+// buf = Buffer.from("我是你跌");
+// console.log(buf);
+// console.log(buf.toString("utf-8", 3, 9)); // 按位置进行提取
+
+// slice 截取长度 --- 替换为subarray 来代替，是为了兼容性
+// buf = Buffer.from("hello , the frontEnd");
+// let b3 = buf.subarray(3, 9); // 顾头不顾尾的截取
+// console.log(b3);
+// console.log(b3.toString());
+
+// indexOf  -- 由内容查找下标
+// buf = Buffer.from("zce爱前端，爱学习,写东西");
+// console.log(buf);
+// console.log(buf.indexOf("爱", 4));
+
+// copy
+let b3 = Buffer.alloc(6);
+let b4 = Buffer.from("拉钩");
+
+b4.copy(b3);
+console.log(b3);
+console.log(b4);
