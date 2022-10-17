@@ -1,0 +1,1 @@
+var age = 18; // 使用eval语法的时候不要使用let / const 
